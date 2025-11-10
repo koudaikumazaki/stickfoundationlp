@@ -1,0 +1,261 @@
+/* 全体 */
+.lp-skin-breath {
+  font-family: "Noto Sans JP", "Yu Gothic", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #222;
+  background: #f7f4f1;
+}
+
+.lp-section {
+  padding: 80px 16px;
+}
+
+.lp-section-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+/* 見出し */
+.lp-section-title {
+  font-size: 26px;
+  letter-spacing: 0.06em;
+  margin-bottom: 24px;
+}
+
+/* ヒーロー */
+.lp-hero {
+  padding-top: 120px;
+  padding-bottom: 100px;
+  background: radial-gradient(circle at top, #ffffff, #f0ece8);
+}
+
+.lp-hero-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+}
+
+.lp-hero-text {
+  flex: 1 1 340px;
+}
+
+.lp-hero-visual {
+  flex: 1 1 320px;
+  text-align: center;
+}
+
+.lp-label {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.lp-hero-title {
+  font-size: 32px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.lp-hero-sub {
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+
+.lp-hero-img-placeholder {
+  width: 100%;
+  max-width: 360px;
+  height: 360px;
+  margin: 0 auto 8px;
+  border-radius: 32px;
+  border: 1px solid #d4d0cb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: #999;
+  background: linear-gradient(135deg, #fdfdfd, #ece7e1);
+}
+
+.lp-hero-caption {
+  font-size: 12px;
+  color: #777;
+}
+
+/* レイアウト共通 */
+.lp-lead {
+  font-size: 16px;
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+.lp-highlight {
+  margin-top: 20px;
+  padding: 18px 20px;
+  border-left: 4px solid #b8b29f;
+  background: #fbf9f6;
+}
+
+.lp-note {
+  font-size: 13px;
+  color: #666;
+  margin-top: 16px;
+}
+
+/* 横並びセクション */
+.lp-split {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.lp-split-text {
+  flex: 1 1 360px;
+}
+
+.lp-split-visual {
+  flex: 1 1 280px;
+}
+
+.lp-diagram-placeholder {
+  width: 100%;
+  max-width: 380px;
+  height: 260px;
+  margin: 0 auto 10px;
+  border-radius: 24px;
+  border: 1px dashed #c9c3b5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: #999;
+  background: #fdfbf7;
+}
+
+.lp-diagram-caption {
+  font-size: 12px;
+  color: #777;
+  text-align: center;
+}
+
+/* 哲学セクション */
+.lp-philosophy {
+  background: #f1ede7;
+}
+
+.lp-philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.lp-ph-item {
+  padding: 18px 20px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+}
+
+.lp-ph-title {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* CTA */
+.lp-cta {
+  background: #222;
+  color: #f7f4f1;
+  text-align: center;
+}
+
+.lp-cta-inner {
+  max-width: 640px;
+}
+
+.lp-price-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px auto 12px;
+  max-width: 420px;
+}
+
+.lp-price-table th,
+.lp-price-table td {
+  border-bottom: 1px solid #444;
+  padding: 10px 8px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.lp-price-table th {
+  font-weight: 500;
+  width: 45%;
+}
+
+.lp-price-note {
+  font-size: 12px;
+}
+
+.lp-cta-note {
+  font-size: 12px;
+  margin-bottom: 24px;
+  color: #d9d2c4;
+}
+
+/* ボタン */
+.lp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  border: none;
+  cursor: pointer;
+}
+
+.lp-btn-primary {
+  background: #d1c7b4;
+  color: #222;
+}
+
+.lp-btn-primary:hover {
+  opacity: 0.9;
+}
+
+.lp-btn-large {
+  padding: 16px 40px;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+  .lp-section {
+    padding: 56px 16px;
+  }
+
+  .lp-hero-title {
+    font-size: 24px;
+  }
+
+  .lp-section-title {
+    font-size: 22px;
+  }
+
+  .lp-philosophy-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lp-hero-inner {
+    flex-direction: column;
+  }
+
+  .lp-split {
+    flex-direction: column;
+  }
+}

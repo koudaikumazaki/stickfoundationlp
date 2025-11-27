@@ -1,209 +1,534 @@
-<link rel="stylesheet" href="style.css">
-<div class="lp-skin-breath">
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>肌が深呼吸するスティックベース｜公式LP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="lp-body">
 
-  <!-- 1. メインビジュアル -->
-  <section class="lp-section lp-hero" id="hero">
-    <div class="lp-hero-inner">
-      <div class="lp-hero-text">
-        <p class="lp-label">美容オイルイン・スティックベース</p>
-        <h1 class="lp-hero-title">
-          夜まで肌が深呼吸する。<br>
-          科学が証明する、毛穴を塞がないベースメイク。
-        </h1>
-        <p class="lp-hero-sub">
-          メイクの「重さ」から解放し、肌が本来持つ休息の時間を取り戻します。<br>
-          「つけていることを忘れる解放感」と「水光パールのツヤ」を両立。
+  <main class="lp-main">
+
+    <!-- ========================
+      1. HERO（メインビジュアル）
+    ========================= -->
+    <section class="lp-section lp-hero lp-hero--img" id="hero">
+      <div class="lp-hero-media">
+        <picture>
+          <!-- モバイル用（必要なら差し替え） -->
+          
+          <source
+            srcset="https://zisei.co.jp/wp-content/uploads/2025/11/hero-desktop-1600.webp"
+            media="(max-width: 768px)" type="image/webp">
+         
+          <!-- デスクトップ用 -->
+          <source
+            srcset="https://zisei.co.jp/wp-content/uploads/2025/11/hero-desktop-1600.webp"
+            media="(min-width: 769px)" type="image/webp">
+          <img
+            class="lp-hero-img"
+            src="https://zisei.co.jp/wp-content/uploads/2025/11/hero-desktop-1600.jpg"
+            alt="重厚なシルバー容器とオリーブの葉、ツヤのあるテクスチャーのビジュアル"
+            width="1920" height="1080"
+            sizes="100vw"
+            decoding="async"
+            fetchpriority="high"
+            loading="eager"
+          >
+        </picture>
+        <div class="lp-hero-overlay"></div>
+      </div>
+
+      <div class="lp-hero-content">
+        <div class="lp-hero-text">
+          <p class="lp-label">美容オイルイン・スティックベース</p>
+          <h1 class="lp-hero-title">
+            夜まで肌が深呼吸する。<br>
+            科学が証明する、毛穴を塞がないベースメイク。
+          </h1>
+          <p class="lp-hero-sub">
+            メイクの「重さ」から解放し、肌が本来持つ休息の時間を取り戻します。<br>
+            「つけていることを忘れる解放感」と「水光パールのツヤ」を両立。
+          </p>
+          <a href="#cta" class="lp-btn lp-btn-primary">
+            今すぐ「肌の休息ベース」を試す
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================
+      2. PRODUCT SUMMARY
+    ========================= -->
+    <section class="lp-section lp-summary" id="summary">
+      <div class="lp-section-inner">
+        <h2 class="lp-section-title">肌を休ませながら<br>きれいも欲しいあなたへ。</h2>
+        <p class="lp-lead">
+          夕方になるとどんよりして見える。<br>クレンジングも、肌も、少し重い。<br>
+          そんな大人の肌のために生まれたのが、<br>この「休息ベースメイク」です。
         </p>
-        <a href="#cta" class="lp-btn lp-btn-primary">
-          今すぐ「肌の休息ベース」を試す
+
+        <div class="lp-summary-grid">
+          <div class="lp-summary-item">
+            <h3 class="lp-summary-label">こんな方に</h3>
+            <ul class="lp-list">
+              <li>夕方、顔が疲れて見えるのが気になる</li>
+              <li>毛穴や小鼻まわりの詰まり感が気になる</li>
+              <li>クレンジングの摩擦が負担に感じる</li>
+              <li>メイクをすると肌がこわばることがある</li>
+            </ul>
+          </div>
+
+          <div class="lp-summary-item lp-summary-icons">
+            <h3 class="lp-summary-label">3つのキー機能</h3>
+            <ul class="lp-icon-list">
+              <li>
+                <span class="lp-icon-tag">ノンオクルーシブ</span>
+                <span class="lp-icon-caption">メイク中も肌が深呼吸</span>
+              </li>
+              <li>
+                <span class="lp-icon-tag">毛穴落ちしにくい</span>
+                <span class="lp-icon-caption">粒子設計でフタをしない</span>
+              </li>
+              <li>
+                <span class="lp-icon-tag">洗顔料でオフ</span>
+                <span class="lp-icon-caption">クレンジング不要の処方</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================
+      3. PROBLEM / INSIGHT
+    ========================= -->
+    <section class="lp-section lp-problem" id="problem">
+      <div class="lp-section-inner">
+        <h2 class="lp-section-title">夕方“どんより”して見える<br>本当の理由</h2>
+        <p class="lp-lead">
+          それは、メイクによる<strong>「閉塞感」</strong>と、落とすときの<strong>「クレンジング摩擦」</strong>です。
+        </p>
+        <p>
+          毛穴をびっしりと埋めるベースメイクは、時間がたつほど肌を圧迫し、動きを妨げ、硬くさせます。<br>
+          さらに、夜には落とすために“こする回数”が増え、肌への負担が蓄積していきます。
+        </p>
+        <p>
+          その結果、夕方のくすみ、どんより感、毛穴の目立ち、乾燥や小じわといった悩みが現れます。
+        </p>
+        <p class="lp-highlight">
+          だからこそ私たちは、<br>
+          <strong>「肌にフタをしないベースメイク」</strong>という、まったく新しい答えにたどり着きました。
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================
+      4. CONCEPT / SOLUTION
+    ========================= -->
+    <section class="lp-section lp-concept" id="concept">
+      <div class="lp-section-inner">
+        <h2 class="lp-section-title">メイクするのに、肌が休む<br>休息ベースメイクという発想</h2>
+        <p class="lp-lead">
+          私たちが目指したのは、「メイクしている間も、肌が深呼吸できる状態」。<br>
+          ベースメイクでありながら、スキンケアの延長のように軽く、ストレスの少ない処方です。
+        </p>
+        <p>
+          ・肌がよく知っている“植物油”をベースに<br>
+          ・粒子サイズまで設計した“毛穴にフタをしない”着色技術を組み合わせ<br>
+          ・夜は洗顔料だけで落とせる“やさしいオフ”までを含めてデザインしました。
+        </p>
+        <p>
+          1本で、軽さ・ツヤ・肌負担の少なさを同時に叶える。<br>
+          それが、この「美容オイルイン・スティックベース」です。
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================
+      5. SCIENCE & FEATURES
+    ========================= -->
+    <section class="lp-section lp-science" id="science">
+      <div class="lp-section-inner">
+
+        <h2 class="lp-section-title">科学が支える<br>3つのやさしさ</h2>
+
+        <!-- Feature 1 -->
+        <article class="lp-feature-card">
+          <div class="lp-feature-text">
+            <h3 class="lp-feature-title">ノンオクルーシブ処方 ― メイク中も肌が深呼吸。</h3>
+            <p class="lp-lead">
+              肌のバリアは「オレイン酸」などを多く含む、油の壁（ラメラ構造）でできています。
+            </p>
+            <p>
+              本製品に高配合したオリーブ油・ホホバ油は、このラメラ構造と<strong>化学的に近い構造</strong>を持っています。<br>
+              そのため異物として認識されにくく、角質細胞のすき間にすっと馴染み、肌の動きを妨げません。
+            </p>
+            <p>
+              その結果、長時間つけていても肌が硬くならず、こわばりにくい。<br>
+              まるで<strong>メイク中も肌が深呼吸している</strong>ような「ノンオクルーシブ（非閉塞性）」な状態を保ちます。
+            </p>
+          </div>
+          <div class="lp-feature-visual">
+            <!-- 図解：ラメラ構造 × 植物油 -->
+            <figure class="lp-figure">
+              <img
+                src="https://zisei.co.jp/wp-content/uploads/2025/11/diagram-lamella-oil.png"
+                alt="角質層のラメラ構造と、オレイン酸を含む植物油分子が鍵と鍵穴のようにフィットしている模式図"
+              >
+              <figcaption class="lp-figure-caption">
+                角質層のラメラ構造（水と油の層）に、植物油の分子が“鍵と鍵穴”のように馴染むイメージ。
+              </figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <!-- Feature 2 -->
+        <article class="lp-feature-card">
+          <div class="lp-feature-text">
+            <h3 class="lp-feature-title">毛穴落ちしにくい“ブリッジング構造”。</h3>
+            <p class="lp-lead">
+              一般的なファンデーションに使われる微細な酸化鉄は、毛穴に入り込みやすく、詰まりやヨレの原因になります。
+            </p>
+            <p>
+              本製品は、毛穴より大きい<strong>パール粒子（約5μm〜）</strong>を採用。<br>
+              粒子が毛穴の上に“橋を架けるように”留まり、毛穴をフタせずに凹凸をふわっとカバーします。
+            </p>
+            <p>
+              これが、毛穴落ちを防ぎながら、光だけをまとったような<br>
+              <strong>「呼吸する光のヴェール」</strong>をつくる秘密です。
+            </p>
+          </div>
+          <div class="lp-feature-visual">
+            <!-- 図解：粒子サイズ比較（パール5μm、毛穴20μm〜） -->
+            <figure class="lp-figure">
+              <img
+                src="https://zisei.co.jp/wp-content/uploads/2025/11/diagram-particle-bridge.png"
+                alt="毛穴の開口部より大きなパール粒子が、毛穴の上に橋をかけるように並んでいる断面図"
+              >
+              <figcaption class="lp-figure-caption">
+                毛穴開口部（約20μm〜）より大きなパール粒子が、毛穴の上でブリッジングするイメージ。
+              </figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <!-- Feature 3 -->
+        <article class="lp-feature-card">
+          <div class="lp-feature-text">
+            <h3 class="lp-feature-title">洗顔料だけでするん、とオフ。</h3>
+            <p class="lp-lead">
+              植物油の弱点（酸化・べたつき）を補うために、刺激の少ないジメチコンを採用しています。
+            </p>
+            <p>
+              クレンジング不要で、石けんや洗顔料だけでスムーズに落とせる処方。<br>
+              夜の“こする回数”が減ることで、肌への摩擦ストレスをまるごと軽減します。
+            </p>
+            <p>
+              「落とす時間まで含めて、肌にやさしい」。<br>
+              そんな視点で設計されたベースメイクです。
+            </p>
+          </div>
+          <div class="lp-feature-visual">
+            <!-- 洗顔泡のイメージ画像 -->
+            <figure class="lp-figure">
+              <img
+                src="https://zisei.co.jp/wp-content/uploads/2025/11/visual-cleansing-foam.png"
+                alt="手のひらにふんわり乗った白い洗顔泡のビジュアル"
+              >
+              <figcaption class="lp-figure-caption">
+                洗顔料だけでやさしくオフできるイメージ。こすらず落とせる軽さを表現。
+              </figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <!-- Feature 4（スキンケアベースのビジュアル追加版） -->
+        <article class="lp-feature-card lp-feature-card--short">
+          <div class="lp-feature-text">
+            <h3 class="lp-feature-title">日中もスキンケアするベースメイク。</h3>
+            <p>
+              ビタミン誘導体などの美容成分を配合。<br>
+              メイクしている時間も、角質層をうるおいで満たし続けます。
+            </p>
+          </div>
+          <div class="lp-feature-visual">
+            <figure class="lp-figure">
+              <img
+                src="https://zisei.co.jp/wp-content/uploads/2025/11/feature4-skincare.png"
+                alt="日中もスキンケアするイメージとして、美容液ボトルとオイルのしずく、きらめきを描いたイラスト"
+              >
+              <figcaption class="lp-figure-caption">
+                スキンケア発想のベースメイクをイメージした、美容液ボトルとオイルのしずくのビジュアル。
+              </figcaption>
+            </figure>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ========================
+      6. HOW TO USE
+    ========================= -->
+    <section class="lp-section lp-howto" id="howto">
+      <div class="lp-section-inner">
+        <h2 class="lp-section-title">おすすめの使い方</h2>
+
+        <!-- ステップ図（4ステップのアイコンフロー） -->
+        <figure class="lp-figure lp-figure-howto">
+          <img
+            src="https://zisei.co.jp/wp-content/uploads/2025/11/diagram-howto-steps.png"
+            alt="4つのアイコンで、直塗り→なじませ→ベース重ね→洗顔オフの流れを示したステップ図"
+          >
+          <figcaption class="lp-figure-caption">
+            朝の仕込みから夜のオフまでの流れを、4つのステップでシンプルに。
+          </figcaption>
+        </figure>
+
+        <ol class="lp-steps">
+          <li>
+            <h3 class="lp-step-title">STEP 1：朝のスキンケア後、直塗り。</h3>
+            <p>
+              Tゾーン、小鼻まわり、頬の毛穴が気になる部分に、<br>
+              スティックをそのまま滑らせます。
+            </p>
+          </li>
+          <li>
+            <h3 class="lp-step-title">STEP 2：指先で軽くトントンとなじませる。</h3>
+            <p>
+              強くこすらず、やさしく広げるだけでOK。<br>
+              肌との一体感が生まれます。
+            </p>
+          </li>
+          <li>
+            <h3 class="lp-step-title">STEP 3：上からパウダー or ファンデを重ねる。</h3>
+            <p>
+              いつものベースメイクの前に仕込むだけ。<br>
+              ツヤを残したい日は、そのままでもご使用いただけます。
+            </p>
+          </li>
+          <li>
+            <h3 class="lp-step-title">STEP 4：夜は洗顔料でオフ。</h3>
+            <p>
+              クレンジング不要。<br>
+              こすらず、するんと落ちる心地よさを体感してください。
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ========================
+      7. LINEUP & PRICE + CTA
+    ========================= -->
+    <section class="lp-section lp-lineup" id="lineup">
+      <div class="lp-section-inner">
+        <h2 class="lp-section-title">商品情報</h2>
+
+        <div class="lp-lineup-main">
+          <div class="lp-lineup-image">
+            <!-- 商品写真（正面・使用シーンの2枚） -->
+            <figure class="lp-figure lp-figure-product">
+              <img
+                src="https://zisei.co.jp/wp-content/uploads/2025/11/product-stick-front.png"
+                alt="重厚なシルバー容器のスティックベースを正面から撮影した商品写真"
+              >
+            </figure>
+            <figure class="lp-figure lp-figure-product">
+              <img
+                src="https://zisei.co.jp/wp-content/uploads/2025/11/product-stick-usage.png"
+                alt="頬にスティックベースを塗布している使用シーンの写真"
+              >
+            </figure>
+          </div>
+          <div class="lp-lineup-text">
+            <h3 class="lp-product-name">美容オイルイン・スティックベース</h3>
+            <p class="lp-product-meta">
+              内容量：○○g ／ カラー：ユニバーサル（1色）
+            </p>
+
+            <table class="lp-price-table">
+              <tbody>
+                <tr>
+                  <th>通常価格</th>
+                  <td>5,280円（税込）</td>
+                </tr>
+                <tr>
+                  <th>初回限定価格（定期便）</th>
+                  <td>3,980円（税込） <span class="lp-price-note">※約25%OFF</span></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p class="lp-cta-note">
+              ※定期初回お受け取り分のご購入は必須となります。<br>
+              ※2回目以降のお受け取り分からは、いつでも解約可能です。
+            </p>
+
+            <a href="#cta" class="lp-btn lp-btn-primary lp-btn-block">
+              【限定価格】今すぐ「肌の休息ベース」を試す
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================
+      8. SAFETY / INGREDIENTS
+    ========================= -->
+    <section class="lp-section lp-safety" id="safety">
+      <div class="lp-section-inner">
+        <h2 class="lp-section-title">安心設計</h2>
+
+        <div class="lp-safety-grid">
+          <div class="lp-safety-item">
+            <h3 class="lp-safety-title">やさしさへのこだわり</h3>
+            <ul class="lp-list">
+              <li>アルコールフリー</li>
+              <li>紫外線吸収剤フリー</li>
+              <li>パラベンフリー</li>
+              <li>合成香料不使用</li>
+            </ul>
+          </div>
+          <div class="lp-safety-item">
+            <h3 class="lp-safety-title">全成分表示</h3>
+            <p class="lp-note">
+              ※実際の全成分を正式名称で記載してください。
+            </p>
+            <p class="lp-ingredients">
+              オリーブ油、ホホバ種子油、ジメチコン、○○、○○、…（以下、全成分）
+            </p>
+          </div>
+        </div>
+
+        <div class="lp-safety-note">
+          <h3 class="lp-safety-title">ご使用上の注意</h3>
+          <p>
+            傷・はれもの・湿疹など異常のある部位には使用しないでください。<br>
+            お肌に異常が生じていないかよく注意して使用し、赤み・はれ・かゆみ・刺激などの異常があらわれた場合は使用を中止し、皮膚科専門医等にご相談ください。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================
+      9. VOICES（使用者の声）
+    ========================= -->
+    <section class="lp-section lp-voices" id="voices">
+      <div class="lp-section-inner">
+        <h2 class="lp-section-title">使用者の声。</h2>
+
+        <div class="lp-voice-grid">
+          <article class="lp-voice-card">
+            <p class="lp-voice-tag">30代・女性</p>
+            <h3 class="lp-voice-title">「夕方のどんより感が、気にならなくなりました。」</h3>
+            <p class="lp-voice-text">
+              夕方になるといつも顔色が悪く見えていたのですが、このスティックを仕込むようになってから、くすみが気になりにくくなりました。
+              何より、メイクしている間の「重さ」がないのが心地よくて、つけているのを忘れるくらいです。
+            </p>
+          </article>
+
+          <article class="lp-voice-card">
+            <p class="lp-voice-tag">20代・女性</p>
+            <h3 class="lp-voice-title">「クレンジングがラクになって、夜が好きになった。」</h3>
+            <p class="lp-voice-text">
+              今までは落とすのが面倒で、メイクの日が少し憂うつでした。これは洗顔料だけで落ちるので、夜のハードルがぐっと下がりました。
+              肌も前より落ち着いている気がします。
+            </p>
+          </article>
+
+          <article class="lp-voice-card">
+            <p class="lp-voice-tag">40代・女性</p>
+            <h3 class="lp-voice-title">「毛穴を隠しすぎない“ツヤ”がちょうどいい。」</h3>
+            <p class="lp-voice-text">
+              毛穴を完璧に隠そうとすると厚塗りになってしまうのが悩みでしたが、これは光でぼかしてくれる感じ。
+              近くで見ても厚塗り感がなく、さりげなく整っている印象になります。
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================
+      10. FAQ
+    ========================= -->
+    <section class="lp-section lp-faq" id="faq">
+      <div class="lp-section-inner">
+        <h2 class="lp-section-title">よくあるご質問</h2>
+
+        <dl class="lp-faq-list">
+          <div class="lp-faq-item">
+            <dt>Q. 敏感肌でも使えますか？</dt>
+            <dd>
+              A. パッチテスト済みですが、すべての方に刺激が出ないわけではありません。気になる場合は腕の内側などでお試しいただいてからご使用ください。
+            </dd>
+          </div>
+          <div class="lp-faq-item">
+            <dt>Q. ファンデーションの前後、どちらに使えば良いですか？</dt>
+            <dd>
+              A. 基本的にはファンデーションの前の“下地”としてのご使用をおすすめしています。
+            </dd>
+          </div>
+          <div class="lp-faq-item">
+            <dt>Q. 本当にクレンジング不要ですか？</dt>
+            <dd>
+              A. はい。洗顔料だけで落とせる処方です。ただし、油性のポイントメイクと重ねて使用した場合は、クレンジングを併用してください。
+            </dd>
+          </div>
+          <div class="lp-faq-item">
+            <dt>Q. 1本でどのくらい持ちますか？</dt>
+            <dd>
+              A. 目安として、毎日ご使用いただいて約○週間～○ヶ月お使いいただけます。（ご使用量により前後します）
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ========================
+      11. FINAL CTA
+    ========================= -->
+    <section class="lp-section lp-cta-final" id="cta">
+      <div class="lp-section-inner lp-cta-final-inner">
+        <h2 class="lp-section-title">
+          夕方のどんより感から<br>今日で卒業しよう
+        </h2>
+        <p class="lp-lead">
+          肌にフタをしない<br>まったく新しいベースメイク。<br>
+          メイクしている時間を、肌の休息時間へ。
+        </p>
+
+        <table class="lp-price-table">
+          <tbody>
+            <tr>
+              <th>通常価格</th>
+              <td>5,280円（税込）</td>
+            </tr>
+            <tr>
+              <th>初回限定価格<br>（定期便）</th>
+              <td>3,980円（税込）<br> <span class="lp-price-note">※ 約25%OFF</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="lp-cta-note">
+          ※定期初回お受け取り分のご購入は必須となります。<br>
+          ※2回目以降のお受け取り分からは、いつでも解約可能です。
+        </p>
+
+        <a href="https://example.com/cart" class="lp-btn lp-btn-primary lp-btn-large">
+          【限定価格】今すぐ「肌の休息ベース」を試す
         </a>
       </div>
+    </section>
 
-      <div class="lp-hero-visual">
-        <!-- ここにスティック容器＋オリーブの写真を入れる -->
-        <div class="lp-hero-img-placeholder">
-          メインビジュアル
-        </div>
-        <p class="lp-hero-caption">重厚なシルバー容器と植物オイルのイメージビジュアル</p>
-      </div>
-    </div>
-  </section>
+  </main>
 
-  <!-- 2. 問題提起 -->
-  <section class="lp-section lp-problem" id="problem">
-    <div class="lp-section-inner">
-      <h2 class="lp-section-title">あなたの肌が「夕方疲れて見える」本当の理由。</h2>
-      <p class="lp-lead">
-        それは、メイクの<strong>「閉塞感」</strong>と、毎日の<strong>「クレンジングの摩擦」</strong>です。
-      </p>
-      <p>
-        肌の上に、毛穴をぎっしりと埋めるように乗ったベースメイク。<br>
-        それを落とすために、夜には何度もこするクレンジング。<br>
-        この繰り返しが、気づかないうちにバリア機能を削り、夕方のどんより感や乾燥、赤みにつながっていきます。
-      </p>
-      <p class="lp-highlight">
-        私たちは、「肌が最も理解できる成分と構造」で、<br>
-        肌にフタをしない新しいベースメイクのカタチを提案します。
-      </p>
-    </div>
-  </section>
+  <footer class="lp-footer">
+    <p class="lp-footer-copy">© 20XX Jisei Inc. All rights reserved.</p>
+  </footer>
 
-  <!-- 3. 核心A：植物油の科学 -->
-  <section class="lp-section lp-science" id="science-a">
-    <div class="lp-section-inner lp-split">
-      <div class="lp-split-text">
-        <h2 class="lp-section-title">
-          【肌の休息科学】なぜ、長時間つけていても「息苦しくない」のか？
-        </h2>
-        <p class="lp-lead">
-          肌のバリア構造が持つ「鍵穴」に、植物油が「鍵」のように馴染むから。
-        </p>
-        <p>
-          肌の水分を守るバリア機能は、<br>
-          「オレイン酸」などを多く含む<strong>油の壁（ラメラ構造）</strong>でできています。
-        </p>
-        <p>
-          本製品に高配合したオリーブ油やホホバ油は、<br>
-          このラメラ構造と<strong>化学構造が酷似</strong>しています。<br>
-          だから、肌にとって「よく知っている成分」。異物として拒否しにくく、角質細胞のすき間にすっと馴染みます。
-        </p>
-        <p>
-          成分が肌の動きを妨げないことで、<br>
-          長時間つけていても肌が硬くならず、こわばりにくい。<br>
-          まるで<strong>メイク中も肌が深呼吸している</strong>ような「ノンオクルーシブ（非閉塞性）」な状態を保ちます。
-        </p>
-        <p class="lp-note">
-          さらに、配合したビタミン誘導体などの美容成分を、日中もじっくりと角質層へ届け続けます。
-        </p>
-      </div>
-
-      <div class="lp-split-visual">
-        <div class="lp-diagram-placeholder">
-          ラメラ構造 × 植物油 図解
-        </div>
-        <p class="lp-diagram-caption">
-          角質層のラメラ構造（水と油の層）と、植物油の分子が「鍵と鍵穴」のように馴染むイメージ。
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4. 核心B：粒子の物理学 -->
-  <section class="lp-section lp-science lp-science-b" id="science-b">
-    <div class="lp-section-inner lp-split">
-      <div class="lp-split-text">
-        <h2 class="lp-section-title">
-          【毛穴落ちの物理学】粒子サイズで証明する、毛穴の「フタをしない」処方。
-        </h2>
-        <p class="lp-lead">
-          微細すぎる粉体ではなく、毛穴の上で「橋を架けて」留まるパール粒子。
-        </p>
-        <p>
-          一般的なファンデーションが使用する微細な着色剤（酸化鉄など）は、<br>
-          その小ささゆえに<strong>毛穴の中へ沈み込みやすく</strong>、毛穴落ちや閉塞感の原因になります。
-        </p>
-        <p>
-          私たちは、粒径が大きく毛穴の開口部の上で留まる<strong>「美容液パール」（約5μm〜）</strong>をメインに採用。<br>
-          毛穴よりも大きい粒子が、表面で<strong>橋を架けるように留まる（ブリッジング構造）</strong>ことで、
-          毛穴のフタをせずに凹凸をやわらかくカバーします。
-        </p>
-        <p>
-          その結果、毛穴落ちを防ぎながらも、<br>
-          光を反射する<strong>「呼吸する光のヴェール」</strong>だけが肌の上に残ります。
-        </p>
-      </div>
-
-      <div class="lp-split-visual">
-        <div class="lp-diagram-placeholder">
-          粒子サイズ × 毛穴開口部 図解
-        </div>
-        <p class="lp-diagram-caption">
-          毛穴開口部（約20μm〜）に対して、大きめのパール粒子が上にブリッジするイメージ。
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 5. 開発者の哲学・安心設計 -->
-  <section class="lp-section lp-philosophy" id="philosophy">
-    <div class="lp-section-inner">
-      <h2 class="lp-section-title">
-        開発者の哲学：正直なものづくりと、譲れない品質。
-      </h2>
-
-      <div class="lp-philosophy-grid">
-
-        <!-- 着色剤 -->
-        <div class="lp-ph-item">
-          <h3 class="lp-ph-title">毛穴に沈み込む顔料は不使用。光を放つ被膜で色を出す技術。</h3>
-          <p>
-            一般的なファンデーションのように、毛穴に沈み込むリスクが高い微細な顔料は、ベースとしては使用していません。
-          </p>
-          <p>
-            本製品のパールは、粒子のコアが毛穴よりも大きいサイズ。<br>
-            その表面に、光を反射する薄い膜として<strong>酸化鉄をコーティング</strong>しています。<br>
-            粒子の大きさで「閉塞感ゼロ」を守りながら、色味とツヤを表現します。
-          </p>
-        </div>
-
-        <!-- 合成成分・容器 -->
-        <div class="lp-ph-item">
-          <h3 class="lp-ph-title">「安価な外箱」と「高価な容器」。この矛盾が、私たちの正直さの証明です。</h3>
-          <p>
-            肌が呼吸する状態を安定して守るために、<br>
-            植物油の弱点（酸化しやすさ・べたつき）を補う<strong>機能性オイル・ジメチコン</strong>を採用しました。
-            刺激が極めて少なく、安全性の高い成分だけを選んでいます。
-          </p>
-          <p>
-            中身の鮮度と安定性を守り抜くために、<br>
-            デパコス級の気密性を持つ<strong>重厚なシルバー容器</strong>を「機能性ツール」として選択。<br>
-            外箱はシンプルに、しかし中身を守るための容器だけには投資を惜しみません。
-          </p>
-        </div>
-
-        <!-- 安心設計 -->
-        <div class="lp-ph-item">
-          <h3 class="lp-ph-title">クレンジング不要。洗顔料でやさしくオフ。</h3>
-          <p>
-            肌への負担となる「摩擦」を減らすため、<br>
-            石けんや洗顔料だけでスムーズに洗い流せる処方にこだわりました。<br>
-            夜の<strong>「メイクを落とすストレス」から完全に解放</strong>します。
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- 6. CTA / 価格情報 -->
-  <section class="lp-section lp-cta" id="cta">
-    <div class="lp-section-inner lp-cta-inner">
-      <h2 class="lp-section-title">
-        【限定オファー】肌を休ませる体験を始める。
-      </h2>
-
-      <table class="lp-price-table">
-        <tbody>
-          <tr>
-            <th>通常価格</th>
-            <td>5,280円（税込）</td>
-          </tr>
-          <tr>
-            <th>初回限定価格（定期便）</th>
-            <td>3,980円（税込） <span class="lp-price-note">※約25%OFF</span></td>
-          </tr>
-        </tbody>
-      </table>
-
-      <p class="lp-cta-note">
-        ※定期初回お受け取り分のご購入は必須となります。<br>
-        ※2回目以降のお受け取り分からは、いつでも解約可能です。
-      </p>
-
-      <a href="【ECやカートのURLを入れる】" class="lp-btn lp-btn-primary lp-btn-large">
-        【限定価格】今すぐ「肌の休息ベース」を試す
-      </a>
-    </div>
-  </section>
-
-</div>
+</body>
+</html>

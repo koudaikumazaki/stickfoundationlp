@@ -1,12 +1,13 @@
 /* ========== Base (Mobile First) ========== */
 :root {
-  --c-text: #222;
-  --c-muted: #666;
-  --c-bg: #f7f4f1;
+  --c-text: #0a1135;
+  --c-muted: #666666;
+  --c-bg: #ffffff;        /* 背景はほぼ白 */
   --c-panel: #ffffff;
+  --c-panel-soft: #fff7ef;
   --c-accent: #d1c7b4;
-  --c-cta-bg: #222222;
-  --c-cta-text: #f7f4f1;
+  --c-cta-bg: #141b3b;
+  --c-cta-text: #ffffff;
 }
 
 *,
@@ -23,13 +24,29 @@ body.lp-body {
   margin: 0;
   color: var(--c-text);
   background: var(--c-bg);
-  font-family: "Noto Sans JP", "Yu Gothic", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  line-height: 1.7;
+  font-family: "M PLUS 1p", "Noto Sans JP", "Yu Gothic", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  /* line-height: 2.0; */
 }
 
 img {
   max-width: 100%;
   display: block;
+}
+
+/* 見出し系フォント */
+h1, h2,
+.lp-hero-title,
+.lp-section-title,
+.lp-feature-title,
+.lp-step-title {
+  font-family: "Zen Old Mincho", "游明朝", "Yu Mincho", serif;
+}
+
+/* 共通テキスト */
+p {
+  margin: 0 0 12px;
+  font-size: 12px;
+  line-height: 2.5;
 }
 
 /* ========== Common Layout ========== */
@@ -38,41 +55,42 @@ img {
 }
 
 .lp-section {
-  padding: 56px 16px;
+  padding: 56px 20px;
 }
 
 .lp-section-inner {
-  max-width: 1040px;
+  max-width: 720px;
   margin: 0 auto;
 }
 
 .lp-section-title {
   font-size: 22px;
-  line-height: 1.5;
+  font-weight: 600;
+  line-height: 1.7;
   margin: 0 0 18px;
+  text-align: left;
+  max-width: 22em; /* 3行前後に収まるように */
 }
 
 .lp-lead {
-  font-size: 15px;
+  font-size: 14px;
+  line-height: 2.4;
   margin: 0 0 16px;
-}
-
-p {
-  margin: 0 0 12px;
 }
 
 .lp-highlight {
   margin-top: 14px;
   padding: 16px 18px;
-  border-left: 4px solid #b8b29f;
-  background: #fbf9f6;
+  border-left: 4px solid #f1b96a;
+  background: #fff7e5;
 }
 
 /* List */
 .lp-list {
   margin: 0;
   padding-left: 1.2em;
-  font-size: 14px;
+  font-size: 12px;
+  line-height: 2.4;
 }
 .lp-list li {
   margin-bottom: 6px;
@@ -107,62 +125,65 @@ p {
   width: 100%;
 }
 
+/* h2 の中央寄せを無効にする */
 h2 {
-  text-align: center;
+  text-align: left;
 }
 
-/* ========== Hero (img full screen, mobile first) ========== */
+/* ========== HERO（参考デザイン寄せ） ========== */
+/* 上：グラデ背景 ＋ スティックだけ浮かぶ */
+/* 下：白いカードとしてコピーが乗る */
+
 .lp-hero.lp-hero--img {
   position: relative;
-  padding: 0;
-  min-height: 100svh;
-  isolation: isolate;
-  overflow: clip;
-  background: #000;
+  padding: 0 0 40px;
+  background: radial-gradient(circle at 0% 0%, #8bb0e5 5%, #f9c2c6 100%);
+  overflow: visible;
 }
 
+/* 画像コンテナは上部に固定高さで配置 */
 .lp-hero-media {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
+  position: relative;
+  inset: auto;
+  height: 360px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-top: 60px;
 }
 
 .lp-hero-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 42%;
+  position: static;
+  width: 140px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 16px 32px rgba(0,0,0,0.28));
 }
 
+/* 黒グラデは使わない */
 .lp-hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.30) 0%,
-    rgba(0, 0, 0, 0.38) 55%,
-    rgba(0, 0, 0, 0.50) 100%
-  );
+  display: none;
 }
 
+/* 下側の白いカード部分 */
 .lp-hero-content {
   position: relative;
   z-index: 1;
-  min-height: inherit;
-  display: flex;
-  align-items: flex-end;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px;
+  transform: translateY(-32px); /* グラデと少し重ねる */
 }
 
 .lp-hero-text {
   width: 100%;
-  max-width: 720px;
   margin: 0 auto;
-  padding: 16px clamp(16px, 6vw, 24px);
-  padding-bottom: calc(env(safe-area-inset-bottom) + 56px);
-  color: #ffffff;
-  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
+  padding: 20px 18px 24px;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  color: var(--c-text);
+  text-shadow: none;
 }
 
 .lp-label {
@@ -174,25 +195,27 @@ h2 {
 }
 
 .lp-hero-title {
-  font-size: clamp(20px, 6vw, 24px);
-  line-height: 1.55;
+  font-size: 20px;
+  line-height: 1.8;
   margin: 8px 0 10px;
 }
 
 .lp-hero-sub {
-  font-size: clamp(13px, 4.2vw, 15px);
-  line-height: 1.8;
-  margin: 0 0 14px;
-  color: #f2f2f2;
+  font-size: 12px;
+  line-height: 2.2;
+  margin: 0 0 18px;
+  color: var(--c-text);
 }
 
 .lp-hero .lp-btn-primary {
-  min-width: 52vw;
-  background: #e8ded0;
-  color: #1f1f1f;
+  min-width: 100%;
 }
 
 /* ========== Summary ========== */
+
+.lp-summary {
+  padding-top: 32px; /* ヒーローカードからの続きなので少し詰める */
+}
 
 .lp-summary-grid {
   display: grid;
@@ -203,7 +226,6 @@ h2 {
 
 .lp-summary-item {
   padding: 16px;
-  border-radius: 16px;
   background: var(--c-panel);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
 }
@@ -217,7 +239,7 @@ h2 {
   list-style: none;
   margin: 0;
   padding: 0;
-  font-size: 13px;
+  font-size: 12px;
 }
 .lp-icon-list li + li {
   margin-top: 10px;
@@ -238,16 +260,19 @@ h2 {
 
 /* ========== Science & Features ========== */
 
+.lp-science {
+  background: #fffaf4;
+}
+
 .lp-feature-card {
   margin-top: 28px;
   padding: 18px 16px;
-  border-radius: 18px;
   background: var(--c-panel);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
 }
 
 .lp-feature-card:first-of-type {
-  margin-top: 16px;
+  margin-top: 18px;
 }
 
 .lp-feature-title {
@@ -268,16 +293,16 @@ h2 {
   height: 220px;
   margin: 0 auto 8px;
   border: 1px dashed #c9c3b5;
-  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 13px;
+  font-size: 12px;
   color: #999;
   background: #fdfbf7;
 }
 
-.lp-diagram-caption {
+.lp-diagram-caption,
+.lp-figure-caption {
   font-size: 12px;
   color: var(--c-muted);
   text-align: center;
@@ -290,10 +315,15 @@ h2 {
 
 /* ========== How to Use ========== */
 
+.lp-howto {
+  background: #ffffff;
+}
+
 .lp-steps {
   margin: 18px 0 0;
   padding-left: 1.2em;
-  font-size: 14px;
+  font-size: 12px;
+  line-height: 2.5;
 }
 .lp-steps li {
   margin-bottom: 14px;
@@ -305,6 +335,10 @@ h2 {
 
 /* ========== Lineup & Price ========== */
 
+.lp-lineup {
+  background: #fffaf4;
+}
+
 .lp-lineup-main {
   display: grid;
   grid-template-columns: 1fr;
@@ -315,12 +349,11 @@ h2 {
 .lp-product-img-placeholder {
   width: 100%;
   height: 260px;
-  border-radius: 20px;
   border: 1px solid #d4d0cb;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 13px;
+  font-size: 12px;
   color: #999;
   background: linear-gradient(135deg, #fdfdfd, #ece7e1);
 }
@@ -331,7 +364,7 @@ h2 {
 }
 
 .lp-product-meta {
-  font-size: 13px;
+  font-size: 12px;
   color: var(--c-muted);
   margin-bottom: 12px;
 }
@@ -340,6 +373,8 @@ h2 {
   width: 100%;
   border-collapse: collapse;
   margin: 10px 0 10px;
+  border: white 1px solid;
+  line-height: 1.5;
 }
 
 .lp-price-table th,
@@ -358,7 +393,8 @@ h2 {
 }
 
 .lp-cta-note {
-  font-size: 12px;
+  font-size: 10px;
+  line-height: 1.5;
   color: var(--c-muted);
   margin: 4px 0 14px;
 }
@@ -366,7 +402,7 @@ h2 {
 /* ========== Safety ========== */
 
 .lp-safety {
-  background: #f1ede7;
+  background: #ffffff;
 }
 
 .lp-safety-grid {
@@ -378,25 +414,56 @@ h2 {
 
 .lp-safety-item {
   padding: 16px;
-  border-radius: 16px;
-  background: var(--c-panel);
+  background: #fffaf4;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.02);
 }
 
 .lp-safety-title {
-  font-size: 15px;
+  font-size: 16px;
   margin: 0 0 8px;
 }
 
 .lp-ingredients {
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .lp-safety-note {
   margin-top: 18px;
-  font-size: 13px;
+  font-size: 12px;
+}
+
+.lp-safety-note-notion {
+  padding: 0 16px;
+  margin-top: 18px;
+  font-size: 8px;
+}
+.lp-safety-title-notion {
+  font-size: 10px;
+  margin: 0;
+}
+.lp-safety-title-notion-text {
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.lp-safety-list p {
+  line-height: 1.5;
+}
+
+.lp-safety-item .lp-note {
+  line-height: 2;
+  margin: 0;
+}
+.lp-safety-item .lp-ingredients {
+  line-height: 2;
+  margin: 0;
 }
 
 /* ========== FAQ ========== */
+
+.lp-faq {
+  background: #ffffff;
+}
 
 .lp-faq-list {
   margin: 10px 0 0;
@@ -404,20 +471,38 @@ h2 {
 }
 
 .lp-faq-item {
-  margin: 0 0 16px;
   padding-bottom: 10px;
-  border-bottom: 1px solid #e1ddd5;
+  border-bottom: 2px solid #0a1135;
+}
+
+.lp-faq-item-last {
+  padding-bottom: 10px;
 }
 
 .lp-faq-item dt {
   font-weight: 600;
   font-size: 14px;
   margin-bottom: 4px;
+  margin-top: 12px;
 }
 
 .lp-faq-item dd {
   margin: 0;
+  font-size: 12px;
+  line-height: 2.4;
+}
+
+.lp-faq-item-last dt {
+  font-weight: 600;
   font-size: 14px;
+  margin-bottom: 4px;
+  margin-top: 12px;
+}
+
+.lp-faq-item-last dd {
+  margin: 0;
+  font-size: 12px;
+  line-height: 2.4;
 }
 
 /* ========== Final CTA ========== */
@@ -440,10 +525,11 @@ h2 {
   max-width: 420px;
   margin: 20px auto 10px;
 }
-.lp-cta-final .lp-price-table th,
+.lp-cta-final .lp-price-table th {
+  border-bottom: 2px #ffffff;
+}
 .lp-cta-final .lp-price-table td {
-  border-bottom: 1px solid #444;
-  color: #f7f4f1;
+  border-bottom: 2px solid #444;
 }
 
 .lp-cta-final .lp-price-note {
@@ -470,13 +556,6 @@ h2 {
 }
 .lp-figure img {
   width: 100%;
-  border-radius: 18px;
-}
-.lp-figure-caption {
-  font-size: 12px;
-  color: var(--c-muted);
-  margin-top: 6px;
-  text-align: center;
 }
 
 /* How to のステップ図は少し余白を大きく */
@@ -492,7 +571,7 @@ h2 {
 
 /* ========== Voices（使用者の声） ========== */
 .lp-voices {
-  background: #f7f4f1;
+  background: #fffaf4;
 }
 
 .lp-voice-grid {
@@ -503,20 +582,19 @@ h2 {
 
 .lp-voice-card {
   padding: 16px;
-  border-radius: 16px;
   background: var(--c-panel);
   box-shadow: 0 8px 20px rgba(0,0,0,0.03);
-  font-size: 14px;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .lp-voice-tag {
-  font-size: 12px;
-  color: var(--c-muted);
-  margin: 0 0 4px;
+  font-size: 16px;
+  margin: 0 0 2px;
 }
 
 .lp-voice-title {
-  font-size: 15px;
+  font-size: 12px;
   margin: 0 0 6px;
 }
 
@@ -538,31 +616,26 @@ h2 {
   }
 
   .lp-lead {
-    font-size: 16px;
+    font-size: 15px;
   }
 
-  /* Hero */
-  .lp-hero.lp-hero--img {
-    min-height: 100vh;
+  /* Hero：PC も同じ構造で、幅だけ少し広げる */
+  .lp-hero-media {
+    height: 420px;
+    padding-top: 80px;
   }
   .lp-hero-img {
-    object-position: center 30%;
+    width: 160px;
+  }
+  .lp-hero-content {
+    padding: 0 24px;
+    transform: translateY(-40px);
   }
   .lp-hero-text {
-    max-width: 1120px;
-    padding: 32px 40px;
-    padding-bottom: clamp(72px, 12vh, 140px);
+    padding: 24px 26px 28px;
   }
   .lp-hero-title {
-    font-size: clamp(28px, 3.6vw, 44px);
-  }
-  .lp-hero-sub {
-    font-size: clamp(14px, 1.6vw, 18px);
-    margin-bottom: 18px;
-  }
-  .lp-hero .lp-btn-primary {
-    min-width: auto;
-    padding: 14px 32px;
+    font-size: clamp(24px, 3vw, 30px);
   }
 
   /* Summary */
@@ -578,7 +651,8 @@ h2 {
     gap: 24px;
   }
   .lp-feature-card--short {
-    display: block;
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
   }
 
   .lp-feature-visual {
@@ -586,7 +660,6 @@ h2 {
   }
   .lp-diagram-placeholder {
     height: 260px;
-    border-radius: 24px;
   }
 
   /* Lineup */
@@ -630,4 +703,115 @@ h2 {
     transition: none !important;
     animation: none !important;
   }
+}
+
+/* ======================
+   CTA（Final Section）
+   デザイン寄せ
+   ====================== */
+
+.lp-cta-final {
+  background: #141b3b;         /* 濃紺のベタ塗り */
+  color: #f7f4f1;
+  text-align: left;            /* 見出し・本文は左揃え */
+  padding: 56px 20px 64px;
+}
+
+.lp-cta-final-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* 見出し・リードの余白をやや広めに */
+.lp-cta-final .lp-section-title {
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.lp-cta-final .lp-lead {
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+
+/* 価格表：白いカード＋左カラム紺・右カラム白 */
+
+.lp-cta-final .lp-price-table {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 0 18px;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #ffffff;
+  border-radius: 0;
+  border: #ffffff 2px solid;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+
+.lp-price-table th,
+.lp-price-table td {
+  padding: 12px 10px;
+  font-size: 12px;
+  border: none;
+}
+
+/* 左カラム（ラベル部分）：紺地に白文字 */
+.lp-price-table th {
+  background: #141b3b;
+  color: #ffffff;
+  font-weight: 600;
+  text-align: left;
+  padding-left: 16px;
+  border-bottom: 2px solid #ffffff;
+  border-radius: 0%;
+}
+
+/* 右カラム（価格部分）：白地に紺文字 */
+.lp-price-table td {
+  background: #ffffff;
+  color: #141b3b;
+  text-align: left;
+  font-weight: 600;
+  padding-left: 24px;
+  border-bottom: 2px solid #0a1135;
+}
+
+/* 最下行だけボーダー消す */
+.lp-price-table tr:last-child th,
+.lp-price-table tr:last-child td {
+  border-bottom: none;
+}
+
+.lp-cta-final .lp-price-note {
+  color: #141b3b;
+  font-size: 12px;
+}
+
+/* 注意書き：やや小さく・行間広めで */
+.lp-cta-final .lp-cta-note {
+  color: #ffffff;
+  font-size: 10px;
+  line-height: 1.9;
+  margin: 10px 0 24px;
+}
+
+/* ボタン：白いカプセル型＋影をつける */
+
+.lp-btn-primary {
+  background: #ffffff;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 12px;
+  border-radius: 999px;
+  padding: 14px 40px;
+  min-width: 0;
+  display: inline-flex;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.35);
+  line-height: 1.5;
+  text-align: center;
+  background: radial-gradient(circle at 0% 0%, #8bb0e5 5%, #f9c2c6 100%);
+}
+
+.lp-cta-final .lp-btn-primary:hover {
+  opacity: 0.95;
 }

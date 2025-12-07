@@ -75,6 +75,10 @@ p {
   max-width: 22em; /* 見出し3行前後に */
 }
 
+.lp-section-title--caution {
+  font-size: 8px;
+}
+
 .lp-lead {
   font-size: 12px;
   line-height: 2;
@@ -140,51 +144,32 @@ p {
 }
 
 /* ========== 4. HERO ========== */
-
+/* セクション全体をファーストビューに */
 .lp-hero.lp-hero--img {
   position: relative;
-  padding: 0 0 40px;
-  background: radial-gradient(circle at 0% 0%, #8bb0e5 5%, #f9c2c6 100%);
-  overflow: visible;
+  min-height: 100vh;
+  padding: 0;
+  overflow: hidden;
+
+  /* 背景画像を hero 全面に敷く */
+  background-image: url("https://zisei.co.jp/wp-content/uploads/2025/12/stick_foundation_FV.jpg");
+  background-size: cover;        /* 画面いっぱい */
+  background-position: center 100%;   /* 中央でトリミング */
+  background-repeat: no-repeat;
 }
 
-/* 上側：グラデ背景にスティックが浮かぶ */
-.lp-hero-media {
-  position: relative;
-  height: 360px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding-top: 60px;
-}
-
-.lp-hero-img {
-  width: 140px;
-  height: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.28));
-}
-
-/* 黒グラデは使わない */
-.lp-hero-overlay {
-  display: none;
-}
-
-/* 下側：白カードにコピー */
+/* テキストレイヤー（前面） */
 .lp-hero-content {
   position: relative;
   z-index: 1;
+  width: 100%;
   max-width: 720px;
   margin: 0 auto;
-  padding: 0 20px;
-  transform: translateY(-32px); /* グラデと少し重ねる */
-}
+  padding: 72px 20px 20px;
+  min-height: 100vh;
 
-.lp-hero-text {
-  width: 100%;
-  margin: 0 auto;
-  padding: 20px 18px 24px;
-  color: var(--c-text);
+  display: flex;
+  align-items: flex-end;
 }
 
 .lp-label {
@@ -192,7 +177,7 @@ p {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   opacity: 0.9;
-  margin: 0 0 6px;
+  margin: 0;
 }
 
 .lp-hero-title {
@@ -201,15 +186,31 @@ p {
   margin: 8px 0 10px;
 }
 
-.lp-hero-sub {
-  font-size: 12px;
+.lp-hero-title-span {
+  font-size: 8px;
+}
+
+.lp-hero-title-caution {
+  font-size: 8px;
   line-height: 2.2;
-  margin: 0 0 18px;
+  margin-bottom: 0 18px;
   color: var(--c-text);
 }
 
 .lp-hero .lp-btn-primary {
   width: 100%;
+}
+
+.lp-hero-text {
+  flex: 1;
+  width: 100%;
+}
+
+/* ヒーロー内のボタンはカード幅いっぱいにする */
+.lp-hero-text .lp-btn-primary {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* ========== 5. Summary ========== */
@@ -428,7 +429,7 @@ p {
 }
 
 .lp-price-note {
-  font-size: 12px;
+  font-size: 10px;
 }
 
 .lp-cta-note {
@@ -474,6 +475,10 @@ p {
 .lp-safety-item .lp-note {
   line-height: 2;
   margin: 0;
+}
+
+.lp-note--caution {
+  font-size: 8px;
 }
 
 .lp-safety-note-notion {
@@ -628,7 +633,7 @@ p {
 
 .lp-cta-final .lp-price-note {
   color: #141b3b;
-  font-size: 12px;
+  font-size: 10px;
 }
 
 .lp-cta-final .lp-cta-note {
@@ -641,7 +646,8 @@ p {
 /* ========== 13. Footer ========== */
 
 .lp-footer {
-  padding: 32px 16px;
+  margin-top: 128px;
+  padding: 0 16px;
   text-align: center;
   font-size: 12px;
   color: #ffffff;
@@ -665,23 +671,74 @@ p {
   }
 
   /* Hero */
-  .lp-hero-media {
-    height: 420px;
-    padding-top: 80px;
-  }
-  .lp-hero-img {
-    width: 160px;
-  }
-  .lp-hero-content {
-    padding: 0 24px;
-    transform: translateY(-40px);
-  }
-  .lp-hero-text {
-    padding: 24px 26px 28px;
-  }
-  .lp-hero-title {
-    font-size: clamp(24px, 3vw, 30px);
-  }
+  @media (min-width: 769px) {
+
+    /* ヒーローの背景画像（PC用画像に切り替え可） */
+    .lp-hero.lp-hero--img {
+      background-image: url("https://zisei.co.jp/wp-content/uploads/2025/12/stick_foundation_FV_PC.jpg"); /* ←PC用画像 */
+      background-size: cover;
+      background-position: 70% center; /* 右寄せで画像と被りにくく */
+      min-height: 100vh;
+    }
+  
+    /* 全体レイアウト（左右2カラム風） */
+    .lp-hero-content {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 120px 40px 80px;
+  
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+  
+      min-height: 100vh;
+    }
+  
+    /* 背景色なしで読みやすくするため、text-shadow を追加 */
+    .lp-hero-text {
+      width: 460px;              /* 読みやすいPC横幅 */
+      padding: 0;
+      background: none;          /* ← 完全に背景削除 */
+      backdrop-filter: none;
+  
+      /* 背景に左右されず文字を読ませる最低限の工夫 */
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+    }
+  
+    .lp-hero-title {
+      font-size: 32px;
+      line-height: 1.6;
+    }
+  
+    /* CTA：PCは上品にコンパクト */
+    .lp-hero .lp-btn-primary {
+      display: inline-block;
+      padding: 14px 48px;
+      font-size: 16px;
+      margin-top: 24px;
+      border-radius: 999px;
+      width: auto;
+    }
+  
+    /* 商品画像の位置：右下寄りに固定 */
+    .lp-hero-media {
+      position: absolute;
+      inset: 0;
+  
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+  
+      padding: 0 80px 40px 0; /* 左に余白を作ってテキストと被らないよう調整 */
+    }
+  
+    .lp-hero-img {
+      width: 380px;  /* PCに最適化したサイズ */
+      height: auto;
+      object-fit: contain;
+    }
+  }  
 
   /* Summary */
   .lp-summary-grid {

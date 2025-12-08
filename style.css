@@ -100,6 +100,14 @@ p {
   line-height: 2.4;
 }
 
+.lp-breakout {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  width: 100vw;
+  max-width: 100vw;
+  position: relative;
+}
+
 /* ========== 3. Buttons ========== */
 
 .lp-btn {
@@ -737,6 +745,14 @@ p {
       width: 380px;  /* PCに最適化したサイズ */
       height: auto;
       object-fit: contain;
+    }
+
+    /* ヒーローだけ WP の本文幅からフルブリードさせる */
+    .lp-hero.lp-hero--img {
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      width: 100vw;
+      max-width: 100vw;
     }
   }  
 

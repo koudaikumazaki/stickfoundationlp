@@ -151,6 +151,33 @@ p {
   width: 100%;
 }
 
+/* ========== Middle BG（summary〜faq 共通背景） ========== */
+
+.lp-middle-bg {
+  background-image: url("https://zisei.co.jp/wp-content/uploads/2025/12/bg.jpg");
+  background-size: cover;       /* 1枚を画面いっぱいに */
+  background-repeat: repeat-y;  /* 縦方向にだけ繰り返す */
+  background-position: center top;
+  background-attachment: fixed;
+
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  width: 100vw;
+}
+
+/* ラッパー内のセクション背景を透過させる（元の#fffaf4などを打ち消す） */
+.lp-middle-bg .lp-summary,
+.lp-middle-bg .lp-problem,
+.lp-middle-bg .lp-concept,
+.lp-middle-bg .lp-science,
+.lp-middle-bg .lp-howto,
+.lp-middle-bg .lp-lineup,
+.lp-middle-bg .lp-safety,
+.lp-middle-bg .lp-voices,
+.lp-middle-bg .lp-faq {
+  background: transparent;
+}
+
 /* ========== 4. HERO ========== */
 /* セクション全体をファーストビューに */
 .lp-hero.lp-hero--img {
@@ -160,7 +187,7 @@ p {
   overflow: hidden;
 
   /* 背景画像を hero 全面に敷く */
-  background-image: url("https://zisei.co.jp/wp-content/uploads/2025/12/stick_foundation_FV.jpg");
+  background-image: url("https://zisei.co.jp/wp-content/uploads/2025/12/stick_foundation_FV.png");
   background-size: cover;        /* 画面いっぱい */
   background-position: center 100%;   /* 中央でトリミング */
   background-repeat: no-repeat;
@@ -338,7 +365,6 @@ p {
   padding-top: 14px;
   /* padding-bottom: 14px; */
 }
-
 /* ========== 7. How to Use ========== */
 
 .lp-howto {
@@ -678,48 +704,47 @@ p {
     font-size: 12px;
   }
 
-  /* Hero */
+  /* Hero（PC） */
   @media (min-width: 769px) {
 
-    /* ヒーローの背景画像（PC用画像に切り替え可） */
     .lp-hero.lp-hero--img {
-      background-image: url("https://zisei.co.jp/wp-content/uploads/2025/12/stick_foundation_FV_PC.jpg"); /* ←PC用画像 */
+      background-image: url("https://zisei.co.jp/wp-content/uploads/2025/12/stick_foundation_FV_PC.png");
       background-size: cover;
-      background-position: 70% center; /* 右寄せで画像と被りにくく */
+      background-position: 70% center;
       min-height: 100vh;
+
+      /* 他セクションと同じくフルブリード */
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      width: 100vw;
+      max-width: 100vw;
     }
-  
-    /* 全体レイアウト（左右2カラム風） */
+
+    /* ↓ 他セクションと同じ設計（max-width: 720px ＋ padding 24px） */
     .lp-hero-content {
-      max-width: 1024px;
-      margin: 0 auto;
-      padding: 120px 40px 80px;
-  
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
-  
-      min-height: 100vh;
-    }
-  
-    /* 背景色なしで読みやすくするため、text-shadow を追加 */
-    .lp-hero-text {
-      width: 460px;              /* 読みやすいPC横幅 */
+      position: absolute;
+      top: 30%; /* ★背景に対して60%位置 */
+      left: 50%;
+      transform: translate(-50%, -60%); /* ★中心基準に補正 */
       padding: 0;
-      background: none;          /* ← 完全に背景削除 */
+      max-width: 720px;
+      width: 100%;
+    }
+
+    .lp-hero-text {
+      width: 100%;
+      max-width: 460px; /* テキスト幅だけ少し絞る */
+      padding: 0;
+      background: none;
       backdrop-filter: none;
-  
-      /* 背景に左右されず文字を読ませる最低限の工夫 */
       text-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
     }
-  
+
     .lp-hero-title {
       font-size: 32px;
       line-height: 1.6;
     }
-  
-    /* CTA：PCは上品にコンパクト */
+
     .lp-hero .lp-btn-primary {
       display: inline-block;
       padding: 14px 48px;
@@ -728,31 +753,21 @@ p {
       border-radius: 999px;
       width: auto;
     }
-  
-    /* 商品画像の位置：右下寄りに固定 */
+
+    /* 画像を右側に寄せたい場合に使うクラス（必要なら） */
     .lp-hero-media {
       position: absolute;
       inset: 0;
-  
       display: flex;
       justify-content: flex-end;
       align-items: flex-end;
-  
-      padding: 0 80px 40px 0; /* 左に余白を作ってテキストと被らないよう調整 */
-    }
-  
-    .lp-hero-img {
-      width: 380px;  /* PCに最適化したサイズ */
-      height: auto;
-      object-fit: contain;
+      padding: 0 80px 40px 0;
     }
 
-    /* ヒーローだけ WP の本文幅からフルブリードさせる */
-    .lp-hero.lp-hero--img {
-      margin-left: calc(50% - 50vw);
-      margin-right: calc(50% - 50vw);
-      width: 100vw;
-      max-width: 100vw;
+    .lp-hero-img {
+      width: 380px;
+      height: auto;
+      object-fit: contain;
     }
   }  
 
@@ -771,6 +786,12 @@ p {
   }
   .lp-feature-visual {
     align-self: center;
+  }
+
+  .lp-howto .lp-feature-visual img {
+    max-width: 480px; /* ★好みのサイズに制限 */
+    margin: 0 auto;
+    display: block;
   }
 
   /* Lineup */
